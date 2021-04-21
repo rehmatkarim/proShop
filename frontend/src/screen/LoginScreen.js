@@ -22,6 +22,8 @@ const LoginScreen = ({ location, history }) => {
   }, [history, userInfo, redirect]);
   const submitHandler = (e) => {
     e.preventDefault();
+    console.log(email)
+    console.log(password)
     dispatch(login(email, password));
   };
   return (
@@ -48,13 +50,13 @@ const LoginScreen = ({ location, history }) => {
             onChange={(e) => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Button typ="submmit" variant="primary">
+        <Button type="submit" variant="primary">
           Sign In
         </Button>
       </Form>
       <Row className="py-3">
         <Col>
-          New Customer?{" "}
+          New Customer?
           <Link to={redirect ? `/register?redirect=${redirect}` : "/register"}>
             Register
           </Link>
